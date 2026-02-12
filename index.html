@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSOS UNITED</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset y base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-image: url('fondoweb.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Animaciones suaves */
+        * {
+            transition: all 0.3s ease;
+        }
+        /* Header / Banner Principal */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo-side {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-side img {
+            height: 40px;
+            width: auto;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+        .center-title {
+            flex: 1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+        }
+        /* Contenido principal */
+        main {
+            margin-top: 80px; /* Espacio para header fijo */
+            padding: 2rem 0;
+        }
+        section {
+            background: rgba(255, 255, 255, 0.95); /* Semi-transparente para flotar sobre fondo */
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+        }
+        /* Video portada */
+        .video-section {
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .video-section video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        /* Texto de presentación */
+        .presentation-text {
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+        .presentation-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        .presentation-text p {
+            margin: 0.5rem 0;
+            font-weight: 300;
+        }
+        /* Botones */
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            margin: 1rem 0;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+        /* Acordeones / Cortinas */
+        .accordion {
+            background: #fff;
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .accordion:hover {
+            background: #f5f5f5;
+        }
+        .panel {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .panel.show {
+            max-height: 500px; /* Ajustar según contenido */
+        }
+        .panel p, .panel ul {
+            margin: 1rem 0;
+            font-weight: 300;
+        }
+        .panel ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .panel li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .panel li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        /* Footer */
+        footer {
+            background: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        /* Responsive Mobile-First */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .logo-side {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+            .nav-links {
+                order: 2;
+                justify-content: center;
+                width: 100%;
+            }
+            .center-title {
+                order: 1;
+                font-size: 1.2rem;
+            }
+            section {
+                margin: 1rem auto;
+                padding: 1rem;
+            }
+            .presentation-text h2 {
+                font-size: 1.5rem;
+            }
+        }
+        @media (min-width: 769px) {
+            .header-content {
+                flex-wrap: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Banner Principal -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-side">
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Tienda</a></li>
+                        <li><a href="#">Plantel</a></li>
+                        <li><a href="https://www.instagram.com/persos_united_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Seguinos en Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="center-title">PERSOS UNITED</div>
+                <div class="logo-side">
+                    <img src="logoweb.png" alt="Logo Persos United">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Portada de Video -->
+        <section class="video-section">
+            <video controls poster="">
+                <source src="videosocio.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+        </section>
+
+        <!-- Texto de Presentación -->
+        <section class="presentation-text">
+            <h2>💳 HACETE SOCIO SIMPATIZANTE</h2>
+            <p>🔥 Sumate al equipo desde el primer día</p>
+            <p>Este proyecto recién arranca… y vos podés ser parte desde el inicio.</p>
+            <hr style="border: none; border-top: 1px solid #000; margin: 2rem 0;">
+            <p>Con tu aporte como socio simpatizante ayudás directamente al crecimiento del equipo: camisetas, partidos, entrenamientos, inscripciones, equipamiento y todo lo que necesitamos para competir al máximo.</p>
+            <p>El aporte inicial es por única vez.</p>
+            <p>Después, si querés seguir apoyando, podés hacerlo cuando puedas y desde donde estés. Sin obligación. Sin cuotas fijas.</p>
+            <p>No sos un espectador.</p>
+            <p>Sos parte del equipo.</p>
+            <a href="#seccion4" class="btn">👉 Quiero sumarme</a>
+        </section>
+
+        <!-- Sección 2: ¿A dónde va tu aporte? -->
+        <section id="seccion2">
+            <button class="accordion">⚽ ¿A dónde va tu aporte?</button>
+            <div class="panel">
+                <p>Al hacer clic en la opción se baja la informacion tipo cortina</p>
+                <p>Acá cada aporte voluntario tiene destino real.</p>
+                <p>Tu apoyo se transforma en:</p>
+                <ul>
+                    <li>🎽 Nuevas camisetas</li>
+                    <li>🏆 Inscripciones a torneos</li>
+                    <li>🏟 Organización de partidos</li>
+                    <li>🏋️ Mejores entrenamientos</li>
+                    <li>🎒 Equipamiento deportivo</li>
+                </ul>
+                <p>"Vos apoyás. El equipo crece."</p>
+            </div>
+        </section>
+
+        <!-- Sección 3: ¿Qué ganás siendo socio? -->
+        <section id="seccion3">
+            <button class="accordion">🎁 ¿Qué ganás siendo socio?</button>
+            <div class="panel">
+                <p>Al hacer clic en la opción se baja la informacion tipo cortina</p>
+                <p>Ser socio no es solo ayudar. También es pertenecer.</p>
+                <p>Como socio simpatizante vas a tener:</p>
+                <ul>
+                    <li>📲 Novedades exclusivas antes que nadie</li>
+                    <li>🎁 Sorteos especiales solo para socios</li>
+                    <li>📸 Contenido interno del equipo</li>
+                    <li>🤝 Ser parte de la comunidad fundadora</li>
+                    <li>🔒 Acceso a info exclusiva</li>
+                </ul>
+                <p>Acá no hay hinchas de afuera.</p>
+                <p>Hay una comunidad.</p>
+                <p>🚀 Este proyecto recién empieza</p>
+                <p>Estamos construyendo algo grande.</p>
+                <p>Un equipo con identidad, compromiso y ganas de dejar huella.</p>
+                <p>Los que estén desde el principio van a ser parte de la historia.</p>
+                <p>💙 Sumate hoy. Crezcamos juntos.</p>
+            </div>
+        </section>
+
+        <!-- Sección 4: ¿Cómo te hacés socio? -->
+        <section id="seccion4">
+            <button class="accordion">📌 ¿Cómo te hacés socio?</button>
+            <div class="panel">
+                <p>Al hacer clic en la opción se baja la informacion tipo cortina</p>
+                <p>Es rápido y simple:</p>
+                <ol style="list-style: decimal; padding-left: 1.5rem; font-weight: 300;">
+                    <li>Completás el formulario</li>
+                    <li>Realizás tu aporte único</li>
+                    <li>Confirmás</li>
+                    <li>Listo! Ya sos parte del proyecto.</li>
+                </ol>
+                <p>Después, si querés seguir apoyando, lo hacés a tu ritmo. Siempre será voluntario.</p>
+                <a href="https://sociospersosunited.wuaze.com/inscripcion.html" target="_blank" class="btn">👉 HACERME SOCIO AHORA</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Persos United © 2019/2026 – Todos los derechos reservados.</p>
+        <p>“Un equipo, una pasión.”</p>
+    </footer>
+
+    <script>
+        // JavaScript para acordeones
+        const accordions = document.querySelectorAll('.accordion');
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', function() {
+                const panel = this.nextElementSibling;
+                const isOpen = panel.classList.contains('show');
+                // Cerrar todos los panels
+                document.querySelectorAll('.panel').forEach(p => p.classList.remove('show'));
+                // Abrir/cerrar este
+                if (!isOpen) {
+                    panel.classList.add('show');
+                }
+            });
+        });
+
+        // Smooth scroll para anclas
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
