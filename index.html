@@ -21,7 +21,7 @@
             padding: 0 20px;
         }
         header {
-            background: #000; /* Cambiado a negro */
+            background: #000; /* Negro */
             padding: 1.2rem 0;
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -40,7 +40,7 @@
             gap: 2rem;
         }
         .nav-left a {
-            color: #fff; /* Texto blanco */
+            color: #fff; /* Blanco */
             text-decoration: none;
             font-weight: 600;
             font-size: 1.05rem;
@@ -51,7 +51,7 @@
             font-weight: 900;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #fff; /* Texto blanco */
+            color: #fff; /* Blanco */
             margin: 0;
         }
         .logo-right img {
@@ -59,7 +59,7 @@
             width: auto;
         }
         main {
-            padding-top: 140px; /* espacio header */
+            padding-top: 160px; /* Aumentado para más espacio debajo del banner negro */
             padding-bottom: 4rem;
         }
         section {
@@ -71,6 +71,10 @@
             max-width: 880px;
             backdrop-filter: blur(8px);
         }
+        /* Primer section (video) con margen extra arriba para separarlo del banner */
+        main > section:first-child {
+            margin-top: 2rem; /* Margen de espacio entre banner negro y video */
+        }
         .video-wrapper {
             position: relative;
             padding-bottom: 42.55%; /* Ratio 2.35:1 */
@@ -79,7 +83,7 @@
             background: #000;
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-            margin: 2rem auto;
+            margin: 0 auto;
             max-width: 1000px;
         }
         .video-wrapper video {
