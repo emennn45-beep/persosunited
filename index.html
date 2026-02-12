@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERSOS UNITED</title>
+    <title>INSCRIPCIONES</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -21,12 +21,12 @@
             padding: 0 20px;
         }
         header {
-            background: rgba(255,255,255,0.96);
+            background: #000; /* Cambiado a negro */
             padding: 1.2rem 0;
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             backdrop-filter: blur(10px);
         }
         .header-inner {
@@ -40,7 +40,7 @@
             gap: 2rem;
         }
         .nav-left a {
-            color: #000;
+            color: #fff; /* Texto blanco */
             text-decoration: none;
             font-weight: 600;
             font-size: 1.05rem;
@@ -51,7 +51,7 @@
             font-weight: 900;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #000;
+            color: #fff; /* Texto blanco */
             margin: 0;
         }
         .logo-right img {
@@ -73,14 +73,14 @@
         }
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
+            padding-bottom: 42.55%; /* Ratio 2.35:1 */
             height: 0;
             overflow: hidden;
             background: #000;
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.3);
             margin: 2rem auto;
-            max-width: 800px;
+            max-width: 1000px;
         }
         .video-wrapper video {
             position: absolute;
@@ -186,6 +186,7 @@
             .nav-left ul { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
             .center-title h1 { font-size: 2rem; }
             section { padding: 2rem 1.8rem; }
+            .video-wrapper { max-width: 100%; padding-bottom: 56.25%; } /* fallback 16:9 en pantallas pequeñas */
         }
         @media (max-width: 600px) {
             .center-title h1 { font-size: 1.7rem; }
@@ -207,7 +208,7 @@
                 </ul>
             </div>
             <div class="center-title">
-                <h1>PERSOS UNITED</h1>
+                <h1>INSCRIPCIONES</h1>
             </div>
             <div class="logo-right">
                 <img src="logoweb.png" alt="Logo Persos United">
@@ -217,7 +218,6 @@
 </header>
 
 <main class="container">
-
     <section>
         <div class="video-wrapper">
             <video autoplay loop muted playsinline preload="auto" poster="fondoweb.png">
@@ -226,7 +226,6 @@
             </video>
         </div>
     </section>
-
     <section class="presentation">
         <h2>💳 HACETE SOCIO SIMPATIZANTE</h2>
         <div class="fire">🔥 Sumate al equipo desde el primer día</div>
@@ -238,7 +237,6 @@
         <p><strong>No sos un espectador. Sos parte del equipo.</strong></p>
         <a href="#seccion4" class="btn">👉 Quiero sumarme</a>
     </section>
-
     <section>
         <button class="accordion">⚽ ¿A dónde va tu aporte?</button>
         <div class="panel">
@@ -254,7 +252,6 @@
             <p style="text-align:center; font-weight:700; margin-top:1.5rem;">"Vos apoyás. El equipo crece."</p>
         </div>
     </section>
-
     <section>
         <button class="accordion">🎁 ¿Qué ganás siendo socio?</button>
         <div class="panel">
@@ -274,7 +271,6 @@
             <p style="color:#2e7d32; font-weight:800; text-align:center; font-size:1.3rem; margin-top:1.8rem;">💙 Sumate hoy. Crezcamos juntos.</p>
         </div>
     </section>
-
     <section id="seccion4">
         <button class="accordion">📌 ¿Cómo te hacés socio?</button>
         <div class="panel">
@@ -289,14 +285,11 @@
             <a href="https://sociospersosunited.wuaze.com/inscripcion.html" target="_blank" class="btn">👉 HACERME SOCIO AHORA</a>
         </div>
     </section>
-
 </main>
-
 <footer>
     <p>Persos United © 2019/2026 – Todos los derechos reservados.</p>
     <p>“Un equipo, una pasión.”</p>
 </footer>
-
 <script>
     document.querySelectorAll('.accordion').forEach(acc => {
         acc.addEventListener('click', () => {
@@ -318,6 +311,5 @@
         });
     });
 </script>
-
 </body>
 </html>
