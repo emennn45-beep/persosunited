@@ -71,9 +71,9 @@
             max-width: 880px;
             backdrop-filter: blur(8px);
         }
-        /* Margen FUERTE entre banner negro y video (espacio blanco visible) */
+        /* Margen visible entre banner negro y video */
         main > section:first-child {
-            margin-top: 5rem; /* Ajustado para que haya un espacio claro como en la home */
+            margin-top: 5rem; /* Espacio blanco limpio como en la home */
         }
         .video-wrapper {
             position: relative;
@@ -185,12 +185,26 @@
             margin-top: 3rem;
             backdrop-filter: blur(10px);
         }
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 1.5rem;
+        }
+        .footer-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-links a:hover { color: #2e7d32; }
         @media (max-width: 900px) {
             .header-inner { flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
             .nav-left ul { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
             .center-title h1 { font-size: 2rem; }
             section { padding: 2rem 1.8rem; }
-            main > section:first-child { margin-top: 4rem; } /* Ajuste mobile */
+            main > section:first-child { margin-top: 4rem; }
             .video-wrapper { max-width: 100%; padding-bottom: 56.25%; }
         }
         @media (max-width: 600px) {
@@ -207,7 +221,7 @@
         <div class="header-inner">
             <div class="nav-left">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="https://persosunitedfcweboficial.pages.dev/">Home</a></li>
                     <li><a href="#">Tienda</a></li>
                     <li><a href="#">Plantel</a></li>
                     <li><a href="https://www.instagram.com/persos_united_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Seguinos en Instagram</a></li>
@@ -292,10 +306,20 @@
         </div>
     </section>
 </main>
+
 <footer>
+    <div class="footer-links">
+        <ul>
+            <li><a href="https://persosunitedfcweboficial.pages.dev/">Hacete socio</a></li>
+            <li><a href="#">Tienda</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="https://www.instagram.com/persos_united_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Seguinos en Instagram</a></li>
+        </ul>
+    </div>
     <p>Persos United © 2019/2026 – Todos los derechos reservados.</p>
     <p>“Un equipo, una pasión.”</p>
 </footer>
+
 <script>
     document.querySelectorAll('.accordion').forEach(acc => {
         acc.addEventListener('click', () => {
