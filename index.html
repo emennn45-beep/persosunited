@@ -220,7 +220,7 @@
 
     <section>
         <div class="video-wrapper">
-            <video controls preload="metadata" playsinline>
+            <video autoplay loop muted playsinline preload="auto" poster="fondoweb.png">
                 <source src="videosocio.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
@@ -302,9 +302,7 @@
         acc.addEventListener('click', () => {
             const panel = acc.nextElementSibling;
             const isOpen = panel.classList.contains('show');
-
             document.querySelectorAll('.panel').forEach(p => p.classList.remove('show'));
-
             if (!isOpen) {
                 panel.classList.add('show');
                 setTimeout(() => {
@@ -313,7 +311,6 @@
             }
         });
     });
-
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
             e.preventDefault();
@@ -321,5 +318,6 @@
         });
     });
 </script>
+
 </body>
 </html>
