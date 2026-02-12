@@ -13,78 +13,83 @@
             background: url('fondoweb.png') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         header {
             background: #000;
-            padding: 1.2rem 0;
+            padding: 0.8rem 0;
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.6);
         }
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
         }
         .nav-left ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
         }
         .nav-left a {
             color: #fff;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
         .nav-left a:hover { color: #2e7d32; }
         .center-title h1 {
-            font-size: 2.4rem;
+            font-size: 1.6rem;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: #fff;
             margin: 0;
+            text-align: center;
+            flex: 1;
         }
         .logo-right img {
-            height: 70px;
+            height: 50px;
             width: auto;
         }
         main {
-            padding-top: 200px; /* Espacio grande debajo del banner negro */
-            padding-bottom: 4rem;
+            padding-top: 100px;
+            padding-bottom: 3rem;
         }
         section {
             background: rgba(255,255,255,0.94);
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            margin: 2.5rem auto;
-            padding: 2.5rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            margin: 1.5rem auto;
+            padding: 1.8rem 1.2rem;
             max-width: 880px;
             backdrop-filter: blur(8px);
         }
-        /* Margen visible entre banner negro y video */
         main > section:first-child {
-            margin-top: 5rem; /* Espacio blanco limpio como en la home */
+            margin-top: 3rem; /* Espacio entre banner y video */
         }
         .video-wrapper {
             position: relative;
-            padding-bottom: 42.55%; /* Ratio 2.35:1 */
+            padding-bottom: 56.25%; /* 16:9 por defecto (mejor en móvil) */
             height: 0;
             overflow: hidden;
             background: #000;
             border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             margin: 0 auto;
-            max-width: 1000px;
+            max-width: 100%;
         }
         .video-wrapper video {
             position: absolute;
@@ -96,121 +101,126 @@
             text-align: center;
         }
         .presentation h2 {
-            font-size: 2.6rem;
+            font-size: 1.8rem;
             font-weight: 900;
             color: #000;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
         .presentation .fire {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
         }
         .presentation hr {
             border: none;
-            border-top: 3px solid #2e7d32;
-            width: 150px;
-            margin: 2rem auto;
+            border-top: 2px solid #2e7d32;
+            width: 120px;
+            margin: 1.5rem auto;
         }
         .presentation p {
-            font-size: 1.15rem;
-            margin: 1rem auto;
+            font-size: 1rem;
+            margin: 0.8rem auto;
             max-width: 700px;
         }
         .btn {
             background: #2e7d32;
             color: white;
-            padding: 1.1rem 2.5rem;
+            padding: 0.9rem 1.5rem;
             border: none;
             border-radius: 50px;
-            font-size: 1.15rem;
+            font-size: 1rem;
             font-weight: 700;
             text-decoration: none;
-            display: inline-block;
-            margin: 1.5rem 0;
-            box-shadow: 0 6px 20px rgba(46,125,50,0.35);
-            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin: 1.2rem 0;
+            box-shadow: 0 4px 15px rgba(46,125,50,0.3);
+            text-align: center;
         }
         .btn:hover {
             background: #1b5e20;
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(46,125,50,0.5);
         }
         .accordion {
             width: 100%;
             background: #f1f8e9;
             color: #1b5e20;
             border: none;
-            padding: 1.4rem 2rem;
+            padding: 1rem 1.2rem;
             text-align: left;
-            font-size: 1.4rem;
-            font-weight: 800;
-            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 10px;
             cursor: pointer;
-            margin: 1rem 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin: 0.8rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
-        .accordion:hover { background: #dcedc8; }
+        .accordion:hover { background: #e8f5e9; }
         .panel {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.3s ease;
+            transition: max-height 0.4s ease, padding 0.3s ease;
             background: white;
-            border-radius: 0 0 12px 12px;
+            border-radius: 0 0 10px 10px;
         }
         .panel.show {
-            max-height: 1200px;
-            padding: 2rem;
+            max-height: 1000px;
+            padding: 1.5rem;
         }
         .panel ul {
             list-style: none;
             padding: 0;
         }
         .panel li {
-            margin: 0.8rem 0;
-            font-size: 1.1rem;
-            padding-left: 2.2rem;
+            margin: 0.6rem 0;
+            font-size: 1rem;
+            padding-left: 2rem;
             position: relative;
         }
         .panel li::before {
             content: attr(data-emoji);
             position: absolute;
             left: 0;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
         footer {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             background: rgba(255,255,255,0.9);
             color: #333;
             margin-top: 3rem;
-            backdrop-filter: blur(10px);
         }
         .footer-links ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin: 1rem 0 1.5rem;
+            margin: 1rem 0;
+            padding: 0;
         }
         .footer-links a {
             color: #000;
             text-decoration: none;
-            font-weight: 500;
+            font-size: 0.95rem;
         }
         .footer-links a:hover { color: #2e7d32; }
+
+        /* Mobile-first adjustments */
         @media (max-width: 900px) {
-            .header-inner { flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
-            .nav-left ul { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
-            .center-title h1 { font-size: 2rem; }
-            section { padding: 2rem 1.8rem; }
-            main > section:first-child { margin-top: 4rem; }
-            .video-wrapper { max-width: 100%; padding-bottom: 56.25%; }
-        }
-        @media (max-width: 600px) {
+            .header-inner { justify-content: center; }
+            .nav-left ul { gap: 0.8rem; font-size: 0.85rem; }
             .center-title h1 { font-size: 1.7rem; }
-            .logo-right img { height: 55px; }
-            main { padding-top: 160px; }
+            .logo-right img { height: 45px; }
+            main { padding-top: 90px; }
+            section { padding: 1.5rem 1rem; margin: 1.2rem auto; }
+            .presentation h2 { font-size: 1.8rem; }
+            .btn { padding: 0.9rem 1.5rem; font-size: 0.95rem; }
+            .accordion { font-size: 1.1rem; padding: 0.9rem 1.2rem; }
+        }
+        @media (max-width: 480px) {
+            .center-title h1 { font-size: 1.5rem; }
+            .nav-left a { font-size: 0.8rem; }
+            .logo-right img { height: 40px; }
+            main { padding-top: 80px; }
         }
     </style>
 </head>
@@ -224,7 +234,7 @@
                     <li><a href="https://persosunitedfcweboficial.pages.dev/">Home</a></li>
                     <li><a href="#">Tienda</a></li>
                     <li><a href="#">Plantel</a></li>
-                    <li><a href="https://www.instagram.com/persos_united_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Seguinos en Instagram</a></li>
+                    <li><a href="https://www.instagram.com/persos_united_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
                 </ul>
             </div>
             <div class="center-title">
@@ -269,7 +279,7 @@
                 <li data-emoji="🏋️">Mejores entrenamientos</li>
                 <li data-emoji="🎒">Equipamiento deportivo</li>
             </ul>
-            <p style="text-align:center; font-weight:700; margin-top:1.5rem;">"Vos apoyás. El equipo crece."</p>
+            <p style="text-align:center; font-weight:700; margin-top:1rem;">"Vos apoyás. El equipo crece."</p>
         </div>
     </section>
     <section>
@@ -287,15 +297,14 @@
             <p>Acá no hay hinchas de afuera. Hay una comunidad.</p>
             <p>🚀 Este proyecto recién empieza. Estamos construyendo algo grande.</p>
             <p>Un equipo con identidad, compromiso y ganas de dejar huella.</p>
-            <p>Los que estén desde el principio van a ser parte de la historia.</p>
-            <p style="color:#2e7d32; font-weight:800; text-align:center; font-size:1.3rem; margin-top:1.8rem;">💙 Sumate hoy. Crezcamos juntos.</p>
+            <p style="color:#2e7d32; font-weight:800; text-align:center; font-size:1.2rem; margin-top:1.2rem;">💙 Sumate hoy. Crezcamos juntos.</p>
         </div>
     </section>
     <section id="seccion4">
         <button class="accordion">📌 ¿Cómo te hacés socio?</button>
         <div class="panel">
             <p>Es rápido y simple:</p>
-            <ol style="padding-left:2rem; font-size:1.1rem;">
+            <ol style="padding-left:1.5rem; font-size:1rem;">
                 <li>Completás el formulario</li>
                 <li>Realizás tu aporte único</li>
                 <li>Confirmás</li>
