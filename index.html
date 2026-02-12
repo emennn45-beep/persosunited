@@ -13,8 +13,9 @@
             background: url('fondoweb.png') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
-            line-height: 1.5;
-            hyphens: auto; /* Evita palabras sueltas al final de línea */
+            line-height: 1.55;
+            overflow-wrap: break-word; /* Evita palabras muy largas que rompan el layout */
+            word-break: normal;        /* No corta palabras */
         }
         .container {
             max-width: 1000px;
@@ -23,7 +24,7 @@
         }
         header {
             background: #000;
-            padding: 0.7rem 0; /* Más compacto */
+            padding: 0.7rem 0; /* Compacto y responsive */
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
@@ -78,14 +79,15 @@
             max-width: 880px;
             backdrop-filter: blur(8px);
             text-align: justify;
+            text-justify: inter-word; /* Mejora alineación sin dejar palabras sueltas */
         }
-        /* Espacio blanco entre banner y video */
+        /* Espacio blanco entre banner y video (NO pegado) */
         main > section:first-child {
             margin-top: 4.5rem; /* Desktop */
         }
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 por defecto en móvil */
+            padding-bottom: 56.25%; /* 16:9 en móvil por defecto */
             height: 0;
             overflow: hidden;
             background: #000;
@@ -138,6 +140,7 @@
             margin: 1.2rem 0;
             box-shadow: 0 4px 15px rgba(46,125,50,0.3);
             text-align: center;
+            letter-spacing: 0.5px; /* Evita espaciado raro en botones */
         }
         .btn:hover {
             background: #1b5e20;
@@ -225,6 +228,8 @@
             .nav-left a { font-size: 0.8rem; }
             .logo-right img { height: 40px; }
             main { padding-top: 80px; }
+            .presentation h2 { font-size: 1.6rem; }
+            .btn { font-size: 0.92rem; padding: 0.85rem 1.2rem; }
         }
     </style>
 </head>
