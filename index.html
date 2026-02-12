@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PERSOS UNITED</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Reset y base */
         * {
@@ -13,292 +13,350 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: #000;
+            color: #111;
             background-image: url('fondoweb.png');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-attachment: fixed;
+            background-repeat: no-repeat;
             min-height: 100vh;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
         /* Animaciones suaves */
         * {
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
-        /* Header / Banner Principal */
+        /* Header / Banner Principal - Simétrico y premium */
         header {
-            background: #fff;
-            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 1.2rem 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            backdrop-filter: blur(8px);
         }
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
-        .logo-side {
+        .nav-left, .nav-right {
+            flex: 1;
             display: flex;
             align-items: center;
-            gap: 1rem;
         }
-        .logo-side img {
-            height: 40px;
+        .nav-left ul {
+            list-style: none;
+            display: flex;
+            gap: 1.8rem;
+        }
+        .nav-left a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        .nav-left a:hover {
+            color: #2e7d32;
+        }
+        .center-logo-title {
+            text-align: center;
+            flex: 2;
+        }
+        .center-logo-title h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #000;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .logo-right img {
+            height: 60px;
             width: auto;
         }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1rem;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #000;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        .nav-links a:hover {
-            color: #4CAF50;
-        }
-        .center-title {
-            flex: 1;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #000;
-        }
-        /* Contenido principal */
+        /* Main content - flotante sobre fondo */
         main {
-            margin-top: 80px; /* Espacio para header fijo */
-            padding: 2rem 0;
+            margin-top: 110px; /* espacio header fijo */
+            padding: 2rem 0 4rem;
         }
         section {
-            background: rgba(255, 255, 255, 0.95); /* Semi-transparente para flotar sobre fondo */
+            background: rgba(255, 255, 255, 0.94);
+            margin: 2.5rem auto;
+            padding: 2.5rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            max-width: 900px;
+            backdrop-filter: blur(12px);
+        }
+        /* Video - centrado, con márgenes y visible */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
             margin: 2rem auto;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            max-width: 800px;
-            backdrop-filter: blur(10px);
+            max-width: 720px;
         }
-        /* Video portada */
-        .video-section {
-            margin: 1rem 0;
-            text-align: center;
-        }
-        .video-section video {
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            height: 100%;
+            object-fit: cover;
         }
-        /* Texto de presentación */
-        .presentation-text {
+        /* Presentación */
+        .presentation {
             text-align: center;
-            font-size: 1.1rem;
-            margin: 1rem 0;
         }
-        .presentation-text h2 {
-            font-size: 2rem;
+        .presentation h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
             margin-bottom: 1rem;
+            letter-spacing: 1px;
             color: #000;
         }
-        .presentation-text p {
-            margin: 0.5rem 0;
-            font-weight: 300;
+        .presentation .subtitle {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #2e7d32;
         }
-        /* Botones */
+        .presentation hr {
+            border: none;
+            border-top: 2px solid #000;
+            width: 120px;
+            margin: 2rem auto;
+        }
+        .presentation p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0.9rem 0;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Botones - verde deportivo elegante */
         .btn {
             display: inline-block;
-            background: #4CAF50;
-            color: #fff;
-            padding: 1rem 2rem;
+            background: #2e7d32; /* Verde oscuro elegante deportivo */
+            color: white;
+            padding: 1rem 2.2rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
-            margin: 1rem 0;
-            transition: background 0.3s ease;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin: 1.5rem 0;
+            box-shadow: 0 6px 20px rgba(46,125,50,0.3);
         }
         .btn:hover {
-            background: #45a049;
+            background: #1b5e20;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(46,125,50,0.4);
         }
-        /* Acordeones / Cortinas */
+        /* Acordeones */
         .accordion {
-            background: #fff;
+            background: #f8f9fa;
             cursor: pointer;
-            padding: 1rem;
+            padding: 1.4rem 2rem;
             width: 100%;
             text-align: left;
             border: none;
             outline: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0.5rem 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
         }
         .accordion:hover {
-            background: #f5f5f5;
+            background: #e8f5e9;
+            transform: translateY(-2px);
         }
         .panel {
-            padding: 0 1rem;
+            padding: 0 2rem;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            background: #fff;
+            border-radius: 0 0 12px 12px;
         }
         .panel.show {
-            max-height: 500px; /* Ajustar según contenido */
+            max-height: 800px; /* ajustable según contenido */
+            padding: 2rem;
         }
         .panel p, .panel ul {
             margin: 1rem 0;
-            font-weight: 300;
+            font-weight: 400;
+            font-size: 1.05rem;
         }
         .panel ul {
             list-style: none;
             padding-left: 0;
         }
         .panel li {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
+            margin: 0.8rem 0;
+            padding-left: 2rem;
             position: relative;
         }
         .panel li::before {
-            content: '•';
+            content: attr(data-emoji);
             position: absolute;
             left: 0;
-            color: #4CAF50;
-            font-weight: bold;
+            font-size: 1.3rem;
         }
         /* Footer */
         footer {
-            background: #fff;
+            background: rgba(255,255,255,0.97);
             text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
             border-top: 1px solid #eee;
+            backdrop-filter: blur(8px);
         }
-        /* Responsive Mobile-First */
-        @media (max-width: 768px) {
+        footer p {
+            font-size: 1rem;
+            color: #333;
+            margin: 0.5rem 0;
+        }
+        /* Responsive mobile-first */
+        @media (max-width: 900px) {
             .header-content {
-                flex-direction: column;
+                flex-wrap: wrap;
                 gap: 1rem;
             }
-            .logo-side {
-                order: 3;
-                width: 100%;
+            .nav-left ul {
+                flex-wrap: wrap;
                 justify-content: center;
+                gap: 1.2rem;
             }
-            .nav-links {
-                order: 2;
-                justify-content: center;
-                width: 100%;
+            .center-logo-title h1 {
+                font-size: 1.8rem;
             }
-            .center-title {
-                order: 1;
-                font-size: 1.2rem;
+            .logo-right img {
+                height: 50px;
             }
             section {
-                margin: 1rem auto;
-                padding: 1rem;
+                padding: 2rem 1.5rem;
+                margin: 1.8rem auto;
             }
-            .presentation-text h2 {
-                font-size: 1.5rem;
+            .presentation h2 {
+                font-size: 2rem;
             }
         }
-        @media (min-width: 769px) {
-            .header-content {
-                flex-wrap: nowrap;
+        @media (max-width: 600px) {
+            .center-logo-title h1 {
+                font-size: 1.6rem;
+            }
+            .btn {
+                padding: 0.9rem 1.8rem;
+                font-size: 1rem;
+            }
+            .accordion {
+                font-size: 1.2rem;
+                padding: 1.2rem 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header / Banner Principal -->
+
+    <!-- Header Banner -->
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo-side">
-                    <ul class="nav-links">
+                <div class="nav-left">
+                    <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Tienda</a></li>
                         <li><a href="#">Plantel</a></li>
-                        <li><a href="https://www.instagram.com/persos_united_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Seguinos en Instagram</a></li>
+                        <li><a href="https://www.instagram.com/persos_united_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Seguinos en Instagram</a></li>
                     </ul>
                 </div>
-                <div class="center-title">PERSOS UNITED</div>
-                <div class="logo-side">
+
+                <div class="center-logo-title">
+                    <h1>PERSOS UNITED</h1>
+                </div>
+
+                <div class="nav-right logo-right">
                     <img src="logoweb.png" alt="Logo Persos United">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Contenido principal -->
     <main class="container">
-        <!-- Portada de Video -->
-        <section class="video-section">
-            <video controls poster="">
-                <source src="videosocio.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </section>
 
-        <!-- Texto de Presentación -->
-        <section class="presentation-text">
-            <h2>💳 HACETE SOCIO SIMPATIZANTE</h2>
-            <p>🔥 Sumate al equipo desde el primer día</p>
-            <p>Este proyecto recién arranca… y vos podés ser parte desde el inicio.</p>
-            <hr style="border: none; border-top: 1px solid #000; margin: 2rem 0;">
-            <p>Con tu aporte como socio simpatizante ayudás directamente al crecimiento del equipo: camisetas, partidos, entrenamientos, inscripciones, equipamiento y todo lo que necesitamos para competir al máximo.</p>
-            <p>El aporte inicial es por única vez.</p>
-            <p>Después, si querés seguir apoyando, podés hacerlo cuando puedas y desde donde estés. Sin obligación. Sin cuotas fijas.</p>
-            <p>No sos un espectador.</p>
-            <p>Sos parte del equipo.</p>
-            <a href="#seccion4" class="btn">👉 Quiero sumarme</a>
-        </section>
-
-        <!-- Sección 2: ¿A dónde va tu aporte? -->
-        <section id="seccion2">
-            <button class="accordion">⚽ ¿A dónde va tu aporte?</button>
-            <div class="panel">
-                <p>Al hacer clic en la opción se baja la informacion tipo cortina</p>
-                <p>Acá cada aporte voluntario tiene destino real.</p>
-                <p>Tu apoyo se transforma en:</p>
-                <ul>
-                    <li>🎽 Nuevas camisetas</li>
-                    <li>🏆 Inscripciones a torneos</li>
-                    <li>🏟 Organización de partidos</li>
-                    <li>🏋️ Mejores entrenamientos</li>
-                    <li>🎒 Equipamiento deportivo</li>
-                </ul>
-                <p>"Vos apoyás. El equipo crece."</p>
+        <!-- 1. Video Portada -->
+        <section>
+            <div class="video-wrapper">
+                <video controls preload="metadata" playsinline>
+                    <source src="videosocio.mp4" type="video/mp4">
+                    Tu navegador no soporta videos MP4.
+                </video>
             </div>
         </section>
 
-        <!-- Sección 3: ¿Qué ganás siendo socio? -->
-        <section id="seccion3">
+        <!-- Texto de Presentación -->
+        <section class="presentation">
+            <h2>💳 HACETE SOCIO SIMPATIZANTE</h2>
+            <div class="subtitle">🔥 Sumate al equipo desde el primer día</div>
+            <p>Este proyecto recién arranca… y vos podés ser parte desde el inicio.</p>
+            <hr>
+            <p>Con tu aporte como socio simpatizante ayudás directamente al crecimiento del equipo: camisetas, partidos, entrenamientos, inscripciones, equipamiento y todo lo que necesitamos para competir al máximo.</p>
+            <p>El aporte inicial es por única vez.</p>
+            <p>Después, si querés seguir apoyando, podés hacerlo cuando puedas y desde donde estés. Sin obligación. Sin cuotas fijas.</p>
+            <p><strong>No sos un espectador.</strong></p>
+            <p><strong>Sos parte del equipo.</strong></p>
+            <a href="#seccion4" class="btn">👉 Quiero sumarme</a>
+        </section>
+
+        <!-- Sección 2 -->
+        <section>
+            <button class="accordion">⚽ ¿A dónde va tu aporte?</button>
+            <div class="panel">
+                <p>Acá cada aporte voluntario tiene destino real.</p>
+                <p>Tu apoyo se transforma en:</p>
+                <ul>
+                    <li data-emoji="🎽">Nuevas camisetas</li>
+                    <li data-emoji="🏆">Inscripciones a torneos</li>
+                    <li data-emoji="🏟">Organización de partidos</li>
+                    <li data-emoji="🏋️">Mejores entrenamientos</li>
+                    <li data-emoji="🎒">Equipamiento deportivo</li>
+                </ul>
+                <p style="font-weight:600; text-align:center; margin-top:1.5rem;">"Vos apoyás. El equipo crece."</p>
+            </div>
+        </section>
+
+        <!-- Sección 3 -->
+        <section>
             <button class="accordion">🎁 ¿Qué ganás siendo socio?</button>
             <div class="panel">
-                <p>Al hacer clic en la opción se baja la informacion tipo cortina</p>
                 <p>Ser socio no es solo ayudar. También es pertenecer.</p>
                 <p>Como socio simpatizante vas a tener:</p>
                 <ul>
-                    <li>📲 Novedades exclusivas antes que nadie</li>
-                    <li>🎁 Sorteos especiales solo para socios</li>
-                    <li>📸 Contenido interno del equipo</li>
-                    <li>🤝 Ser parte de la comunidad fundadora</li>
-                    <li>🔒 Acceso a info exclusiva</li>
+                    <li data-emoji="📲">Novedades exclusivas antes que nadie</li>
+                    <li data-emoji="🎁">Sorteos especiales solo para socios</li>
+                    <li data-emoji="📸">Contenido interno del equipo</li>
+                    <li data-emoji="🤝">Ser parte de la comunidad fundadora</li>
+                    <li data-emoji="🔒">Acceso a info exclusiva</li>
                 </ul>
                 <p>Acá no hay hinchas de afuera.</p>
                 <p>Hay una comunidad.</p>
@@ -306,17 +364,16 @@
                 <p>Estamos construyendo algo grande.</p>
                 <p>Un equipo con identidad, compromiso y ganas de dejar huella.</p>
                 <p>Los que estén desde el principio van a ser parte de la historia.</p>
-                <p>💙 Sumate hoy. Crezcamos juntos.</p>
+                <p style="color:#1976d2; font-weight:700; text-align:center; font-size:1.2rem; margin-top:1.5rem;">💙 Sumate hoy. Crezcamos juntos.</p>
             </div>
         </section>
 
-        <!-- Sección 4: ¿Cómo te hacés socio? -->
+        <!-- Sección 4 -->
         <section id="seccion4">
             <button class="accordion">📌 ¿Cómo te hacés socio?</button>
             <div class="panel">
-                <p>Al hacer clic en la opción se baja la informacion tipo cortina</p>
                 <p>Es rápido y simple:</p>
-                <ol style="list-style: decimal; padding-left: 1.5rem; font-weight: 300;">
+                <ol style="padding-left: 1.8rem; font-weight:400; font-size:1.05rem;">
                     <li>Completás el formulario</li>
                     <li>Realizás tu aporte único</li>
                     <li>Confirmás</li>
@@ -326,6 +383,7 @@
                 <a href="https://sociospersosunited.wuaze.com/inscripcion.html" target="_blank" class="btn">👉 HACERME SOCIO AHORA</a>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
@@ -335,26 +393,37 @@
     </footer>
 
     <script>
-        // JavaScript para acordeones
-        const accordions = document.querySelectorAll('.accordion');
-        accordions.forEach(accordion => {
-            accordion.addEventListener('click', function() {
+        // Acordeones - solo uno abierto a la vez
+        document.querySelectorAll('.accordion').forEach(acc => {
+            acc.addEventListener('click', function() {
                 const panel = this.nextElementSibling;
-                const isOpen = panel.classList.contains('show');
-                // Cerrar todos los panels
-                document.querySelectorAll('.panel').forEach(p => p.classList.remove('show'));
-                // Abrir/cerrar este
-                if (!isOpen) {
+                const wasOpen = panel.classList.contains('show');
+
+                // Cerrar todos
+                document.querySelectorAll('.panel').forEach(p => {
+                    p.classList.remove('show');
+                });
+
+                // Toggle este
+                if (!wasOpen) {
                     panel.classList.add('show');
+                }
+
+                // Scroll suave al acordeón abierto
+                if (!wasOpen) {
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
                 }
             });
         });
 
-        // Smooth scroll para anclas
+        // Smooth scroll para enlaces internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
