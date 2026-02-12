@@ -59,7 +59,7 @@
             width: auto;
         }
         main {
-            padding-top: 180px; /* Espacio general debajo del banner negro */
+            padding-top: 200px; /* Espacio grande debajo del banner negro */
             padding-bottom: 4rem;
         }
         section {
@@ -71,9 +71,9 @@
             max-width: 880px;
             backdrop-filter: blur(8px);
         }
-        /* Margen visible entre banner negro y video (igual al estilo de la home) */
+        /* Margen FUERTE entre banner negro y video (espacio blanco visible) */
         main > section:first-child {
-            margin-top: 3.5rem; /* Espacio limpio y visible entre banner y video */
+            margin-top: 5rem; /* Ajustado para que haya un espacio claro como en la home */
         }
         .video-wrapper {
             position: relative;
@@ -190,11 +190,13 @@
             .nav-left ul { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
             .center-title h1 { font-size: 2rem; }
             section { padding: 2rem 1.8rem; }
-            .video-wrapper { max-width: 100%; padding-bottom: 56.25%; } /* fallback en pantallas pequeñas */
+            main > section:first-child { margin-top: 4rem; } /* Ajuste mobile */
+            .video-wrapper { max-width: 100%; padding-bottom: 56.25%; }
         }
         @media (max-width: 600px) {
             .center-title h1 { font-size: 1.7rem; }
             .logo-right img { height: 55px; }
+            main { padding-top: 160px; }
         }
     </style>
 </head>
